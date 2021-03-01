@@ -16,7 +16,7 @@ public class Damage : MonoBehaviour
             health.healthBar.SetHealth(health.currentHealth);
             Destroy(gameObject);
 
-            if (health.currentHealth == 0) Destroy(other.transform.root.gameObject);
+            if (health.currentHealth <= 0) Destroy(other.transform.root.gameObject);
         }
     }
 }

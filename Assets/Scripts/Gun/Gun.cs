@@ -6,15 +6,8 @@ public class Gun : MonoBehaviour
 {
     [SerializeField]
     private Bullet bullet;
-    [SerializeField]
-    private Cube cube;
 
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyUp(KeyCode.Space)) Shot();
-    }
-
-    private void Shot()
+    public void Shot()
     {
         Vector3 ganPosition = transform.position;
         Quaternion ganRotation = transform.localRotation;

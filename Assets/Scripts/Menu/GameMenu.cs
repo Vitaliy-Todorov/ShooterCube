@@ -9,8 +9,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     Button mainMenuButton;
 
-    [SerializeField]
-    List<CharecterSaveData> objectsSave;
+    List<CharecterSaveData> listGmObj;
 
     [SerializeField]
     Button saveButton;
@@ -20,6 +19,8 @@ public class GameMenu : MonoBehaviour
 
     private void Start()
     {
+        listGmObj = GameObject.Find("Shared").GetComponent<MainLoad>().listGmObj;
+
         mainMenuButton.onClick.AddListener(MainMenu);
 
         saveButton.onClick.AddListener(Save);
@@ -34,12 +35,11 @@ public class GameMenu : MonoBehaviour
 
     void Save()
     {
-        VoluntarySave.SaveGame(objectsSave);
+        VoluntarySave.SaveGame(listGmObj);
     }
 
     void Load()
     {
-        objectsSave = VoluntarySave.GetSaveGmObj();
-        VoluntarySave.LoadGame(objectsSave);
+        VoluntarySave.LoadGame(listGmObj);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainLoad : MonoBehaviour
 {
+    [SerializeField]
     public List<CharecterSaveData> listGmObj;
 
     void Start()
@@ -16,4 +17,9 @@ public class MainLoad : MonoBehaviour
             PlayerPrefs.DeleteKey("MainLoad");
         }
     }
+
+    /*public static List<CharecterSaveData> GetSaveGmObj()
+    {
+        return listGmObj;
+    }*/
 }

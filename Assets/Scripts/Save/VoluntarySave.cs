@@ -7,11 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class VoluntarySave : Save
 {
-    public static List<CharecterSaveData> GetSaveGmObj()
-    {
-        return GameObject.Find("Shared").GetComponent<MainLoad>().listGmObj;
-    }
-
     public static void SaveGame(List<CharecterSaveData> listGmObj)
     {
         string filePath = Application.persistentDataPath + "/save.gamesave";
@@ -46,7 +41,7 @@ public class VoluntarySave : Save
 
         foreach (CharecterSaveData loadGmObj in listGmObj)
         {
-            JsonUtility.FromJsonOverwrite((string) bf.Deserialize(fs), loadGmObj);
+            JsonUtility.FromJsonOverwrite((string)bf.Deserialize(fs), loadGmObj);
         }
 
         fs.Close();

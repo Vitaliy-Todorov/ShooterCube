@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class MotionInput : MonoBehaviour
 {
-    private bool click;
-    private Motion motion;
+    [SerializeField]
+    float speed = 10.0f;
+    bool click;
+    Motion motion;
+    float horizontal;
+    float vertical;
 
     private void Start()
     {
@@ -14,13 +18,12 @@ public class MotionInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _ = motion;
-        motion.horizontal = 0.0f;
-        motion.vertical = 0.0f;
+        horizontal = 0.0f;
+        vertical = 0.0f;
         if (Input.GetAxis("Horizontal") != 0.0f && click)
         {
             click = false;
-            motion.horizontal = Input.GetAxis("Horizontal");
+            horizontal = Input.GetAxis("Horizontal");
         }
         if (Input.GetAxis("Horizontal") == 0.0f)
         {
@@ -29,13 +32,14 @@ public class MotionInput : MonoBehaviour
         if (Input.GetAxis("Vertical") != 0.0f && click)
         {
             click = false;
-            motion.vertical = Input.GetAxis("Vertical");
+            vertical = Input.GetAxis("Vertical");
         }
         if (Input.GetAxis("Vertical") == 0.0f)
         {
             click = true;
         }
 
-        motion.Move();
+        Vector3 movement = new Vector3(horizontal, 0, vertical);
+        motion.Move(movement, speed);
     }
 }

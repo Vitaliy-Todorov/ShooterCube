@@ -13,8 +13,8 @@ public class CharecterSaveData : ScriptableObject
     [SerializeField]
     float currentHealth;
 
-    [Header("Save Data")]
-    string key;
+    [SerializeField] 
+    bool death;
 
     public float CurrentHealth
     {
@@ -22,18 +22,11 @@ public class CharecterSaveData : ScriptableObject
         get { return currentHealth; }
     }
 
-    private void OnEnable()
+    public bool Death
     {
-        JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(key), this);
+        set { death = value; }
+        get { return death; }
     }
 
-    private void OnDisable()
-    {
-        if (key == "")
-            key = name;
 
-        string jsonData = JsonUtility.ToJson(this, true);
-        PlayerPrefs.SetString(key, jsonData);
-        PlayerPrefs.Save();
-    }
 }

@@ -13,6 +13,7 @@ public class GunInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKeyUp(KeyCode.Space)) gun.Shot();
+        if (Input.GetKeyUp(KeyCode.Space))
+            gun.Shot();
     }
 }

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Motion : MonoBehaviour
 {
-    [SerializeField]
-    private float speed;
-    public float horizontal;
-    public float vertical;
-
-    public void Move()
+    public void Move(Vector3 movement, float speed)
     {
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
-
         transform.Translate(movement * speed * Time.fixedDeltaTime, Space.World);
+    }
+
+    public void Teleportation(Vector3 position, Vector3 normal)
+    {
+        transform.position = position;
+        transform.forward = normal;
     }
 }

@@ -50,14 +50,14 @@ public class SettingsMenu : MonoBehaviour
             GraphicsQuality(graphicsQualityDropdown.value);
         });
 
-        mainMenuBullet.onClick.AddListener(delegate
-        {
-            MainPressed(mainMenuObj);
-        });
-
         resolutionDropdown.onValueChanged.AddListener(delegate
         {
             AppointResolution(permissions[resolutionDropdown.value], fullScreenToggle.isOn);
+        });
+
+        mainMenuBullet.onClick.AddListener(delegate
+        {
+            MainPressed(mainMenuObj);
         });
     }
 
@@ -112,7 +112,7 @@ public class SettingsMenu : MonoBehaviour
 
     void MainPressed(GameObject obj)
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         obj.SetActive(true);
     }
 }

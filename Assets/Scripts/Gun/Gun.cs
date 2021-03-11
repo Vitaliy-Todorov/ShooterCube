@@ -5,7 +5,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [SerializeField]
-    private Bullet bullet;
+    Bullet bullet;
 
     public void Shot()
     {

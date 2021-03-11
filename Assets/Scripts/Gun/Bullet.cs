@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float speed = 10.0F;
-    public float damege = 20;
+    [SerializeField]
+    float speed = 15.0F;
+
+    public float damege = 20.0f;
+
+    Motion motion;
 
     //направление оружия
     private Vector3 ganPosition;
@@ -14,11 +18,11 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, 1.4F);
+        motion = gameObject.GetComponent<Motion>();
     }
 
     private void FixedUpdate()
     {
-        //движение пули
-        transform.Translate(ganPosition * speed * Time.fixedDeltaTime);
+        motion.Move(ganPosition, speed);
     }
 }

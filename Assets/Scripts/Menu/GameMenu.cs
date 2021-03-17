@@ -9,7 +9,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     Button mainMenuButton;
 
-    List<CharecterSaveData> listGmObj;
+    List<GameObject> listGmObj;
 
     [SerializeField]
     Button saveButton;

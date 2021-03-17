@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainLoad : MonoBehaviour
 {
     [SerializeField]
-    public List<CharecterSaveData> listGmObj;
+    public List<GameObject> listGmObj;
 
     void Start()
     {

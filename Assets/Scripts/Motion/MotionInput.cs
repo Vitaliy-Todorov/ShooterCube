@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MotionInput : MonoBehaviour
+public class MotionInput : Motion
 {
     [SerializeField]
     float speed = 10.0f;
     bool click;
-    Motion motion;
     float horizontal;
     float vertical;
 
-    private void Start()
+    void Start()
     {
-        motion = gameObject.GetComponent<Motion>();
+        StorageReferenceShootingCube storageReference = GetComponent<StorageReferenceShootingCube>();
+        if (storageReference)
+        {
+            data = storageReference.data;
+        }
     }
 
     private void FixedUpdate()
@@ -39,7 +42,10 @@ public class MotionInput : MonoBehaviour
             click = true;
         }
 
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
-        motion.Move(movement, speed);
+        if ((horizontal != 0) || (vertical != 0))
+        {
+            Vector3 movement = new Vector3(horizontal, 0, vertical);
+            Move(movement, speed);
+        }
     }
 }

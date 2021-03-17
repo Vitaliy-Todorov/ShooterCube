@@ -12,23 +12,28 @@ public class Health : MonoBehaviour
     [Range(1, 5)]
     int armor = 1;
     [SerializeField]
-    GameObject GmObjArmorPaint;
+    GameObject gmObjArmorPaint;
 
-    public CharecterSaveData saveData;
+    DataStorageShootingCube saveData;
+
+    public static bool load;
 
     private void Start()
     {
-        if(saveData.Death)
+        saveData = transform.root.gameObject.GetComponent<StorageReferenceShootingCube>().data;
+
+        if (saveData.Death)
             Destroy(transform.root.gameObject);
 
         currentHealth = saveData.CurrentHealth;
+
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
 
-        if (GmObjArmorPaint != null)
+        if (gmObjArmorPaint != null)
         {
             float minusColorG = 250f / 255f - armor / 5f;
-            GmObjArmorPaint.GetComponent<Renderer>().material.color = new Color(255f / 255f, minusColorG, 50f / 255f, 1);
+            gmObjArmorPaint.GetComponent<Renderer>().material.color = new Color(255f / 255f, minusColorG, 50f / 255f, 1);
         }
     }
 

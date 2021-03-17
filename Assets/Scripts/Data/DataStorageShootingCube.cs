@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Nwe Charecter Save Data", menuName = "Charecter/Data", order = 1)]
-public class CharecterSaveData : ScriptableObject
+public class DataStorageShootingCube : ScriptableObject
 {
     [Header("Stats")]
 
     [SerializeField]
     Vector3 position;
+    [SerializeField]
+    Vector3 normal;
 
     [SerializeField]
     float currentHealth;
@@ -28,5 +30,15 @@ public class CharecterSaveData : ScriptableObject
         get { return death; }
     }
 
+    public Vector3 CurrentPosition
+    {
+        set { position = value; }
+        get { return position; }
+    }
 
+    public Vector3 CurrentNormal
+    {
+        set { normal = value; }
+        get { return normal; }
+    }
 }

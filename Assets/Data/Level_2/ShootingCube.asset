@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f87983d3e3971419b172368d585fd8, type: 3}
   m_Name: ShootingCube
   m_EditorClassIdentifier: 
-  position: {x: -1.9434716, y: 0.5, z: -0.10958317}
-  normal: {x: 0, y: 0, z: 1}
-  currentHealth: 20
+  position: {x: 0, y: 0, z: 0}
+  normal: {x: 0, y: 0, z: 0}
+  currentHealth: 100
   death: 0

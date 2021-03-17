@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
         loadButton.onClick.AddListener(delegate
         {
-            LoatGame(Application.persistentDataPath + "/save.gamesave");
+            LoadGame(Application.persistentDataPath + "/save.gamesave");
         });
 
         settingsButton.onClick.AddListener(delegate {
@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Level_1");
     }
 
-    void LoatGame(string loatFile)
+    void LoadGame(string loatFile)
     {
         PlayerPrefs.SetString("MainLoad", loatFile);
         SceneManager.LoadScene("Level_1");

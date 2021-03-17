@@ -105,8 +105,7 @@ MonoBehaviour:
   currentHealth: 100
   healthBar: {fileID: 4636685240967730509}
   armor: 1
-  GmObjArmorPaint: {fileID: 4636685241562963230}
-  saveData: {fileID: 0}
+  gmObjArmorPaint: {fileID: 4636685241562963230}
 --- !u!1 &4636685240756664187
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +743,7 @@ GameObject:
   - component: {fileID: 4636685241626084962}
   - component: {fileID: 4636685241626084963}
   - component: {fileID: 2377977491450308470}
+  - component: {fileID: 6059722116667749968}
   m_Layer: 0
   m_Name: ShootingCube
   m_TagString: Untagged
@@ -796,9 +796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d63b66a3cea31c4e95ea90ca52e97d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  horizontal: 0
-  vertical: 0
 --- !u!114 &4636685241626084963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,6 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15957ccdad73f1b46a1f9e5d78bcc70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
 --- !u!114 &2377977491450308470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,6 +821,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61da18644984ce2498c930c16b2b4c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6059722116667749968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4636685241626084960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14d83ae74810fc4eb84d9a376d88c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!1 &4636685242124667822
 GameObject:
   m_ObjectHideFlags: 0
